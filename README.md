@@ -109,4 +109,4 @@ Its `site/` sources contain the responsive landing page, app screenshots, origin
 
 The v23 drawer has a direct **Weather World website** row. It resolves `links.website` when tapped; the Help & legal menu also retains Website, offline Privacy/Terms/Help, and Contact support. Change the HTTPS website URL through the package-specific config when needed.
 
-The owner confirmed on 15 October 2026 that the app has not yet been published to Galaxy Store. The landing page therefore says **Coming soon** and links to the requested exact package destination: https://galaxystore.samsung.com/detail/app.weather.usa.forecast.world26. Update the launch copy only after the listing is available. This website release does not enable advertising or purchases.
+The landing page uses the owner-requested download presentation and links to the exact package destination: https://galaxystore.samsung.com/detail/app.weather.usa.forecast.world26. The owner requested removing the prelaunch wording on 15 October 2026. This website presentation change does not establish store publication, and does not enable advertising or purchases.
