@@ -2,8 +2,8 @@
   "schema_version": 1,
   "package": "app.weather.usa.forecast.world26",
   "store": "galaxy_store",
-  "config_version": 12,
-  "revision": "2026-10-15.world26.12",
+  "config_version": 13,
+  "revision": "2026-10-15.world26.13",
   "refresh_seconds": 300,
   "max_cache_age_seconds": 259200,
   "global": {
@@ -13,13 +13,13 @@
   "android": {
     "galaxy_store": {
       "min_supported_version_code": 1,
-      "latest_version_code": 23,
+      "latest_version_code": 24,
       "update_mode": "none",
       "update_url": "samsungapps://ProductDetail/app.weather.usa.forecast.world26"
     },
     "google_play": {
       "min_supported_version_code": 1,
-      "latest_version_code": 23,
+      "latest_version_code": 24,
       "update_mode": "none",
       "update_url": "https://play.google.com/store/apps/details?id=app.weather.usa.forecast.world26"
     }
