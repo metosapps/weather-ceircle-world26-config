@@ -101,3 +101,12 @@ Each `android.galaxy_store` / `android.google_play` section has `min_supported_v
 Native code, SDKs, permissions, package name, signing, app icon, new placements and new features still need an APK build. `features` is reserved and empty; undocumented flags do not invent executable functionality.
 
 The repository's validation workflow checks each push. Validation failure after a direct push does not undo that push; the APK separately validates every response before accepting it.
+
+## Weather World landing page (v23)
+
+The public website remains at https://metosapps.github.io/weather-ceircle-world26-config/.
+Its `site/` sources contain the responsive landing page, app screenshots, original Galaxy Store badge, Privacy Policy, Terms, and support/help page. Publish the contents of `site/` at the GitHub Pages repository root, alongside `config.json`.
+
+The v23 drawer has a direct **Weather World website** row. It resolves `links.website` when tapped; the Help & legal menu also retains Website, offline Privacy/Terms/Help, and Contact support. Change the HTTPS website URL through the package-specific config when needed.
+
+The owner confirmed on 15 October 2026 that the app has not yet been published to Galaxy Store. The landing page therefore says **Coming soon** and links to the requested exact package destination: https://galaxystore.samsung.com/detail/app.weather.usa.forecast.world26. Update the launch copy only after the listing is available. This website release does not enable advertising or purchases.
