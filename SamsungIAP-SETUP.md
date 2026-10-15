@@ -1,4 +1,4 @@
-# Samsung IAP setup for Weather 14-26-Ceircle
+# Samsung IAP setup for Weather World
 
 Package: `app.weather.usa.forecast.world26`  
 Support: `ahmetefeerdal3@gmail.com`  

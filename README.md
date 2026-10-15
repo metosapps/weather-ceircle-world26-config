@@ -1,4 +1,4 @@
-# Weather 14-26-Ceircle remote controls
+# Weather World remote controls
 
 This repository controls only `app.weather.usa.forecast.world26`, Galaxy Store variant. The world26 APK must include the v21 remote-control implementation or a later compatible version. This repository is independent from the earlier package configuration; installed copies of earlier packages keep their own repository. A package rename cannot be delivered by JSON alone.
 
@@ -17,10 +17,10 @@ Production ads start disabled. QA APKs always use official Google sample units, 
 | `kill_switches.ads_enabled` | Emergency switch for all active ad formats |
 | `ads.enabled` | Global ads switch |
 | `ads.production_enabled` | Separate production eligibility switch; initially false |
-| `ads.app_id` | Expected production manifest App ID; empty until configured |
+| `ads.app_id` | Expected production manifest App ID; must match this package's release build |
 | `ads.formats.FORMAT.enabled` | Enable/disable banner, native, interstitial or app_open |
 | `ads.placements.NAME.enabled` | Enable/disable one placement |
-| `unit_id` | AdMob unit for this placement; production IDs are initially empty |
+| `unit_id` | AdMob unit for this placement; see the configured format mapping below |
 | `every_n_actions` | Count eligible placement opportunities: 3 means every third opportunity |
 | `min_interval_seconds` | Minimum spacing for this placement |
 | `max_per_session` | Maximum actual shows/impressions in one app process session |
@@ -35,6 +35,21 @@ Default navigation interstitial: every 3 eligible transitions, at least 90 secon
 A session is the lifetime of the app process, not each foreground resume. Hard minimum spacing: 60 seconds per banner/native/interstitial placement, 120 seconds app-open, 30 seconds shared full-screen cooldown. Config cannot override Pro, consent, lifecycle, active full-screen safety or update/maintenance gates. Counts come from actual SDK show/impression callbacks. Failed loads and canceled “Showing ads” notices are not impressions.
 
 Inline loads wait for a resumed, focused owner and a visible placement container; cached offscreen weather pages and prefetched list rows do not qualify merely because they are attached. A placement reserves at most one pending impression before starting an SDK load, so multiple page instances cannot load simultaneously through the same placement. Requests blocked only by visibility, a pending reservation or cooldown remain eligible for later evaluation. Hide/detach/stop before the impression, failure and config invalidation release the reservation; an actual late SDK impression still counts once. This pacing does not add full-screen timer opportunities.
+
+### Configured AdMob identity
+
+Weather World currently has the following owner-supplied App ID and ad units, transcribed from the supplied screenshot. The AdMob console's package association and production serving have not been verified. These identifiers are configuration values, not secret credentials.
+
+App ID: `ca-app-pub-3289974964220873~8753342500`
+
+| Format | Unit ID | Existing placements |
+| --- | --- | --- |
+| Banner | `ca-app-pub-3289974964220873/2831106992` | All 8 banner placements |
+| Interstitial | `ca-app-pub-3289974964220873/5728558063` | Splash and navigation |
+| Native | `ca-app-pub-3289974964220873/4415476394` | All 4 native placements |
+| App-open | `ca-app-pub-3289974964220873/2116616117` | Foreground placement |
+
+`ads.enabled` and `ads.production_enabled` remain **false**. App-open's format and placement stay disabled. This revision configures identities without enabling ad requests; existing pacing, consent, purchase and lifecycle guards remain in force. QA builds continue to use Google's sample IDs. The configured latest store build is versionCode 22, with update mode `none`.
 
 ### Placement map
 
