@@ -2,8 +2,8 @@
   "schema_version": 1,
   "package": "app.weather.usa.forecast.world26",
   "store": "galaxy_store",
-  "config_version": 13,
-  "revision": "2026-10-15.world26.13",
+  "config_version": 14,
+  "revision": "2026-10-16.world26.14",
   "refresh_seconds": 300,
   "max_cache_age_seconds": 259200,
   "global": {
@@ -39,7 +39,7 @@
     "iap_enabled": true
   },
   "ads": {
-    "enabled": false,
+    "enabled": true,
     "production_enabled": false,
     "app_id": "ca-app-pub-3289974964220873~8753342500",
     "global_cooldown_seconds": 90,
