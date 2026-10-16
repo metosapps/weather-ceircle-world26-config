@@ -49,7 +49,7 @@ App ID: `ca-app-pub-3289974964220873~8753342500`
 | Native | `ca-app-pub-3289974964220873/4415476394` | All 4 native placements |
 | App-open | `ca-app-pub-3289974964220873/2116616117` | Foreground placement |
 
-`ads.enabled` is **true** for QA and `ads.production_enabled` remains **false**. App-open's format and placement stay disabled. Home allows collapsible banners; existing pacing, consent, purchase and lifecycle guards remain in force. QA builds continue to use Google's sample IDs. Config 16 changes IAP catalog availability only; it leaves every ads setting unchanged. The configured latest store build remains versionCode 24, with update mode `none`.
+Config 17 disables **all advertising, including QA test ads**, at the owner's request. `ads.enabled`, `ads.production_enabled`, `kill_switches.ads_enabled`, all four format switches and all 15 placement switches are **false**. Keep ads disabled until this exact app is confirmed live and the owner explicitly asks to activate them. Ad IDs, pacing and the Home collapsible setting are retained for later controlled activation; they cannot serve ads while these switches are off. Samsung IAP remains configured and enabled. Existing installs apply the change after successfully fetching config 17; offline devices retain their cached settings until refresh or expiry. The configured latest store build remains versionCode 24, with update mode `none`.
 
 ### Placement map
 

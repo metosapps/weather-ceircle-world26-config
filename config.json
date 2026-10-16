@@ -2,8 +2,8 @@
   "schema_version": 1,
   "package": "app.weather.usa.forecast.world26",
   "store": "galaxy_store",
-  "config_version": 16,
-  "revision": "2026-10-16.world26.16",
+  "config_version": 17,
+  "revision": "2026-10-16.world26.17",
   "refresh_seconds": 300,
   "max_cache_age_seconds": 259200,
   "global": {
@@ -35,24 +35,24 @@
   },
   "features": {},
   "kill_switches": {
-    "ads_enabled": true,
+    "ads_enabled": false,
     "iap_enabled": true
   },
   "ads": {
-    "enabled": true,
+    "enabled": false,
     "production_enabled": false,
     "app_id": "ca-app-pub-3289974964220873~8753342500",
     "global_cooldown_seconds": 90,
     "max_fullscreen_per_session": 5,
     "formats": {
       "banner": {
-        "enabled": true
+        "enabled": false
       },
       "native": {
-        "enabled": true
+        "enabled": false
       },
       "interstitial": {
-        "enabled": true
+        "enabled": false
       },
       "app_open": {
         "enabled": false
@@ -61,7 +61,7 @@
     "placements": {
       "banner_main": {
         "format": "banner",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/2831106992",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -72,7 +72,7 @@
       },
       "banner_locations": {
         "format": "banner",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/2831106992",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -83,7 +83,7 @@
       },
       "banner_units": {
         "format": "banner",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/2831106992",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -94,7 +94,7 @@
       },
       "banner_widgets": {
         "format": "banner",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/2831106992",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -105,7 +105,7 @@
       },
       "banner_features": {
         "format": "banner",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/2831106992",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -116,7 +116,7 @@
       },
       "banner_notifications": {
         "format": "banner",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/2831106992",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -127,7 +127,7 @@
       },
       "banner_hourly": {
         "format": "banner",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/2831106992",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -138,7 +138,7 @@
       },
       "banner_daily": {
         "format": "banner",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/2831106992",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -149,7 +149,7 @@
       },
       "native_weather": {
         "format": "native",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/4415476394",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -159,7 +159,7 @@
       },
       "native_exit": {
         "format": "native",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/4415476394",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -169,7 +169,7 @@
       },
       "native_hourly": {
         "format": "native",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/4415476394",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -179,7 +179,7 @@
       },
       "native_daily": {
         "format": "native",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/4415476394",
         "every_n_actions": 1,
         "min_interval_seconds": 60,
@@ -189,7 +189,7 @@
       },
       "interstitial_splash": {
         "format": "interstitial",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/5728558063",
         "every_n_actions": 1,
         "min_interval_seconds": 90,
@@ -199,7 +199,7 @@
       },
       "interstitial_navigation": {
         "format": "interstitial",
-        "enabled": true,
+        "enabled": false,
         "unit_id": "ca-app-pub-3289974964220873/5728558063",
         "every_n_actions": 3,
         "min_interval_seconds": 90,
