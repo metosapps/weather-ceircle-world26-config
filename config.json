@@ -2,8 +2,8 @@
   "schema_version": 1,
   "package": "app.weather.usa.forecast.world26",
   "store": "galaxy_store",
-  "config_version": 14,
-  "revision": "2026-10-16.world26.14",
+  "config_version": 15,
+  "revision": "2026-10-16.world26.15",
   "refresh_seconds": 300,
   "max_cache_age_seconds": 259200,
   "global": {
@@ -68,7 +68,7 @@
         "max_per_session": 20,
         "max_per_day": 50,
         "first_session_delay_seconds": 0,
-        "collapsible": false
+        "collapsible": true
       },
       "banner_locations": {
         "format": "banner",
