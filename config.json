@@ -2,8 +2,8 @@
   "schema_version": 1,
   "package": "app.weather.usa.forecast.world26",
   "store": "galaxy_store",
-  "config_version": 15,
-  "revision": "2026-10-16.world26.15",
+  "config_version": 16,
+  "revision": "2026-10-16.world26.16",
   "refresh_seconds": 300,
   "max_cache_age_seconds": 259200,
   "global": {
@@ -220,7 +220,28 @@
     }
   },
   "iap": {
-    "enabled": false,
-    "products": []
+    "enabled": true,
+    "products": [
+      {
+        "id": "world26_pro_weekly",
+        "type": "subscription",
+        "enabled": true
+      },
+      {
+        "id": "world26_pro_monthly",
+        "type": "subscription",
+        "enabled": true
+      },
+      {
+        "id": "world26_pro_yearly",
+        "type": "subscription",
+        "enabled": true
+      },
+      {
+        "id": "world26_pro_lifetime",
+        "type": "lifetime",
+        "enabled": true
+      }
+    ]
   }
 }

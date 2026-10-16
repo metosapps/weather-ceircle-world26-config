@@ -49,7 +49,7 @@ App ID: `ca-app-pub-3289974964220873~8753342500`
 | Native | `ca-app-pub-3289974964220873/4415476394` | All 4 native placements |
 | App-open | `ca-app-pub-3289974964220873/2116616117` | Foreground placement |
 
-`ads.enabled` and `ads.production_enabled` remain **false**. App-open's format and placement stay disabled. This revision configures identities without enabling ad requests; existing pacing, consent, purchase and lifecycle guards remain in force. QA builds continue to use Google's sample IDs. The configured latest store build is versionCode 22, with update mode `none`.
+`ads.enabled` is **true** for QA and `ads.production_enabled` remains **false**. App-open's format and placement stay disabled. Home allows collapsible banners; existing pacing, consent, purchase and lifecycle guards remain in force. QA builds continue to use Google's sample IDs. Config 16 changes IAP catalog availability only; it leaves every ads setting unchanged. The configured latest store build remains versionCode 24, with update mode `none`.
 
 ### Placement map
 
@@ -66,7 +66,7 @@ The ad switches govern the managed app's requests and display. They do not promi
 
 ## Samsung Galaxy IAP (world26 APK v21+)
 
-Samsung IAP SDK 6.5.2 is compiled into the world26 v21 build. The Premium menu supports weekly, monthly, yearly subscriptions and a lifetime ad-removal item. Product IDs have **not been created in Seller Portal yet**, so `iap.enabled` remains false and `iap.products` is empty. The app does not invent prices or fake successful purchases.
+Samsung IAP SDK 6.5.2 is compiled into the current world26 v28 release. The Premium menu supports weekly, monthly, yearly subscriptions and a lifetime ad-removal item. Four products were confirmed Active under Content ID `000009331844` on 2026-10-16: `world26_pro_weekly` ($0.99/week), `world26_pro_monthly` ($1.99/month), `world26_pro_yearly` ($9.99/year) and `world26_pro_lifetime` ($19.99 one time). These are owner-approved USD base prices; the app displays Samsung's localized prices and terms. Config 16 enables IAP and the four entries. Active catalog status and remote configuration do not prove checkout or Restore.
 
 Set `iap.products` to the actual IDs registered under **app.weather.usa.forecast.world26**. Each entry has exactly these required values: `id` (the real Samsung Product ID), `type` (`subscription` or `lifetime`), and `enabled` (boolean). Weekly/monthly/yearly periods and localized prices are read from Samsung's catalog, not from this JSON. Up to eight products are supported. Keep retired IDs in the list with `enabled: false` so they remain restorable. Do not copy another application's IDs.
 
@@ -74,7 +74,7 @@ Set `iap.products` to the actual IDs registered under **app.weather.usa.forecast
 
 The app queries Galaxy Store ownership on launch when configured products or saved grants exist, and on explicit Restore. API errors preserve verified local ownership. Successful complete ownership queries reconcile it; expired subscriptions stop granting ad removal. Receipt validation binds the package, product, payment and compiled TEST/PRODUCTION mode to Samsung's fixed HTTPS receipt endpoint. Durable purchases are acknowledged and never consumed. Acknowledgment failure preserves the verified grant and retries at later ownership checks. No custom verification backend or server notifications have been deployed.
 
-QA builds use Samsung **TEST** mode; production builds use **PRODUCTION** mode. The mode cannot be changed remotely. These environments use different private entitlement caches, excluded from backup/device transfer. For real testing, register this package/signing certificate and the four products in Seller Portal, configure licensed Samsung testers, and follow the current Samsung test workflow. Beta-installed testing requires a production-mode build and an eligible licensed tester; the debug QA APK is not a Galaxy Store release. No real purchase, renewal, refund, cancellation or paid-account Restore has been demonstrated yet.
+QA builds use Samsung **TEST** mode; production builds use **PRODUCTION** mode. The mode cannot be changed remotely. These environments use different private entitlement caches, excluded from backup/device transfer. For real testing, use this package's registered binary/signing identity and the four Active products, configure licensed Samsung testers, and follow the current Samsung test workflow. Beta-installed testing requires a production-mode build and an eligible licensed tester; the debug QA APK is not a Galaxy Store release. No real purchase, renewal, refund, cancellation or paid-account Restore has been demonstrated yet.
 
 See [SamsungIAP-SETUP.md](SamsungIAP-SETUP.md) for the product setup checklist.
 
