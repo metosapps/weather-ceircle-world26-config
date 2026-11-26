@@ -10,13 +10,13 @@ Public website: <https://metosapps.github.io/weather-ceircle-world26-config/>
 
 ## Ads
 
-Production ads start disabled. QA APKs always use official Google sample units, even when production unit IDs are entered here. Production requires a separately signed release with this package's verified AdMob App ID, matching `ads.app_id`, plus `ads.production_enabled: true`. The manifest App ID cannot be changed remotely. Release builds require `WEATHER_ADMOB_APP_ID` explicitly; QA builds use the sample App ID. Do not reuse another app's IDs.
+Production ads are enabled in config 18 at the owner's request. QA APKs use official Google sample units, even when production unit IDs are entered here. The signed v28 release contains this package's AdMob App ID, matching `ads.app_id`. The manifest App ID cannot be changed remotely. Release builds require `WEATHER_ADMOB_APP_ID` explicitly; QA builds use the sample App ID. Do not reuse another app's IDs.
 
 | Field | Effect |
 | --- | --- |
 | `kill_switches.ads_enabled` | Emergency switch for all active ad formats |
 | `ads.enabled` | Global ads switch |
-| `ads.production_enabled` | Separate production eligibility switch; initially false |
+| `ads.production_enabled` | Separate production eligibility switch |
 | `ads.app_id` | Expected production manifest App ID; must match this package's release build |
 | `ads.formats.FORMAT.enabled` | Enable/disable banner, native, interstitial or app_open |
 | `ads.placements.NAME.enabled` | Enable/disable one placement |
@@ -30,7 +30,7 @@ Production ads start disabled. QA APKs always use official Google sample units, 
 | `ads.max_fullscreen_per_session` | Shared full-screen cap |
 | banner `collapsible` | Allow collapsible banner where the compiled placement supports it |
 
-Default navigation interstitial: every 3 eligible transitions, at least 90 seconds apart, maximum 3 per session and 10 per UTC day. Splash: maximum 1 per process session and 2 per day. Shared full-screen cap: 5 per process session. App-open starts disabled. Frequency only controls existing app opportunities; it never creates a background/timer ad.
+Navigation interstitial: every 3 eligible transitions, at least 90 seconds apart, maximum 3 per session and 10 per UTC day. Splash: maximum 1 per process session and 2 per day. Shared full-screen cap: 5 per process session. App-open: at least 180 seconds apart, maximum 3 per session and 10 per day, with a 30-second first-session delay. Frequency only controls existing app opportunities; it never creates a background/timer ad.
 
 A session is the lifetime of the app process, not each foreground resume. Hard minimum spacing: 60 seconds per banner/native/interstitial placement, 120 seconds app-open, 30 seconds shared full-screen cooldown. Config cannot override Pro, consent, lifecycle, active full-screen safety or update/maintenance gates. Counts come from actual SDK show/impression callbacks. Failed loads and canceled “Showing ads” notices are not impressions.
 
@@ -49,7 +49,7 @@ App ID: `ca-app-pub-3289974964220873~8753342500`
 | Native | `ca-app-pub-3289974964220873/4415476394` | All 4 native placements |
 | App-open | `ca-app-pub-3289974964220873/2116616117` | Foreground placement |
 
-Config 17 disables **all advertising, including QA test ads**, at the owner's request. `ads.enabled`, `ads.production_enabled`, `kill_switches.ads_enabled`, all four format switches and all 15 placement switches are **false**. Keep ads disabled until this exact app is confirmed live and the owner explicitly asks to activate them. Ad IDs, pacing and the Home collapsible setting are retained for later controlled activation; they cannot serve ads while these switches are off. Samsung IAP remains configured and enabled. Existing installs apply the change after successfully fetching config 17; offline devices retain their cached settings until refresh or expiry. The configured latest store build remains versionCode 24, with update mode `none`.
+Config 18 enables production advertising at the owner's explicit request. `ads.enabled`, `ads.production_enabled`, `kill_switches.ads_enabled`, all four format switches and all 15 placement switches are **true**. Ad IDs, pacing and the Home collapsible setting remain unchanged. Consent, Premium ownership, lifecycle and frequency gates still apply; enabling config does not prove AdMob fill or an on-device impression. Samsung IAP remains configured and enabled. Existing installs apply the change after successfully fetching config 18; offline devices retain their cached settings until refresh or expiry. The configured latest store build remains versionCode 24, with update mode `none`.
 
 ### Placement map
 
